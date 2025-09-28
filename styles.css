@@ -35,15 +35,22 @@
   }
   
   .logo {
-	font-family: 'Playfair Display', serif;
-	font-size: 2.3rem;
-	font-weight: 700;
-	color: #0ea5e9;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;         
+	color: #000;
 	letter-spacing: 1px;
-	display: flex;
+	display: inline-flex;
 	align-items: center;
-	gap: 0.5rem;
+	justify-content: center;
+	gap: 0rem;
+  
+	/* Border styling */
+	border: 1.5px solid #000000;
+	border-radius: 4px;      /* slightly rounded corners */
+	padding: 0.2rem 0.4rem;  /* spacing inside the border */
   }
+  
   
   .logo span {
 	color: #06b6d4;

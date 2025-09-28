@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medi-Vaca – Medicine meets Vacation</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f9fbff; color: #333; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; }
+    header h1 { color: #2563eb; margin: 0; }
+    nav a { margin: 0 1rem; text-decoration: none; color: #333; }
+    nav a:hover { color: #2563eb; }
+    button { padding: 0.6rem 1.2rem; border: none; border-radius: 10px; cursor: pointer; }
+    .btn-primary { background: #2563eb; color: #fff; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 3rem 2rem; background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover; color: #fff; }
+    .hero-text { max-width: 500px; background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 15px; }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { margin-bottom: 1.5rem; }
+    section { padding: 3rem 2rem; text-align: center; }
+    section h3 { font-size: 2rem; margin-bottom: 2rem; }
+    .grid { display: grid; gap: 1.5rem; }
+    .services { background: #eff6ff url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat bottom/cover; background-blend-mode: lighten; }
+    .services .card, .steps .card { background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+    .services .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .steps .grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .steps .card div { font-size: 2rem; font-weight: bold; color: #2563eb; margin-bottom: 0.5rem; }
+    .contact { background: #2563eb url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center/cover; color: #fff; }
+    form { display: grid; gap: 1rem; max-width: 500px; margin: 0 auto; }
+    input, textarea { padding: 0.8rem; border: none; border-radius: 10px; }
+    #formMessage { margin-top: 1rem; font-weight: bold; }
+    footer { padding: 1rem; text-align: center; font-size: 0.9rem; color: #666; background: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌴 Medi-Vaca</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#steps">How it Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="btn-primary">Get a Quote</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Medical Excellence <span style="color:#a7f3d0">meets</span> Relaxation 🌴</h2>
+      <p>We combine world-class medical procedures with relaxing vacation experiences – for your health and well-being.</p>
+      <button class="btn-primary">Book Free Consultation</button>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h3>Our Services</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>🌿 Surgical Procedures</h4>
+        <p>Top doctors & clinics for your health.</p>
+      </div>
+      <div class="card">
+        <h4>🌴 Recovery Vacation</h4>
+        <p>Exclusive resorts in breathtaking locations.</p>
+      </div>
+      <div class="card">
+        <h4>🤝 Comprehensive Care</h4>
+        <p>From arrival to aftercare – we've got you covered.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps" class="steps">
+    <h3>How it Works</h3>
+    <div class="grid">
+      <div class="card">
+        <div>1</div>
+        <p>Submit Request 🌴</p>
+      </div>
+      <div class="card">
+        <div>2</div>
+        <p>Personal Consultation</p>
+      </div>
+      <div class="card">
+        <div>3</div>
+        <p>Surgery & Vacation</p>
+      </div>
+      <div class="card">
+        <div>4</div>
+        <p>Aftercare & Return</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h3>Request Your Free Consultation 🌴</h3>
+    <p>We’ll get back to you within 24 hours.</p>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="formMessage"></p>
+  </section>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> Medi-Vaca 🌴 All rights reserved.
+  </footer>
+
+  
+
+</body>
+</html>

@@ -11,6 +11,25 @@
 
     gtag('config', 'G-YF6CFWDQTK');
 
+    function toggleMenu(button) {
+      const nav = document.getElementById("navbar");
+      nav.classList.toggle("show");
+
+      // swap the icon between bars and times (X)
+      const icon = button.querySelector("i");
+      if (nav.classList.contains("show")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+        button.classList.add("active");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+        button.classList.remove("active");
+      }
+    }
+
+
+
   </script>
 
   <meta charset="UTF-8">
@@ -28,7 +47,10 @@
 <body>
   <header>
     <h1 class="logo"><i class="fas fa-plane-medical"></i> Medi-Vaca</span></h1>    
-    <nav>
+    <button class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="navbar">
       <a href="#services">Services</a>
       <a href="#steps">How it Works</a>
       <a href="#contact">Contact</a>
@@ -54,7 +76,7 @@
     </noscript>
     <!-- End Meta Pixel Code -->
 
-    <button class="btn-primary" onclick="document.getElementById('quoteModal').classList.add('show')">
+    <button class="btn-primary quote-btn" onclick="document.getElementById('quoteModal').classList.add('show')">
       Get a Quote
     </button>  
   </header>

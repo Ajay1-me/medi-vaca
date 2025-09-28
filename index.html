@@ -10,18 +10,24 @@
     gtag('js', new Date());
 
     gtag('config', 'G-YF6CFWDQTK');
+
   </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script type="text/babel" src="app.jsx"></script>
   <title>Medi-Vaca – Medicine meets Vacation</title>
 </head>
 <body>
   <header>
-    <h1>Medi-Vaca</h1>
-    <nav>
+    <h1 class="logo"><i class="fas fa-plane-medical"></i> Medi<span>Vaca</span></h1>    <nav>
       <a href="#services">Services</a>
       <a href="#steps">How it Works</a>
       <a href="#contact">Contact</a>
@@ -53,66 +59,129 @@
   </header>
 
   <section class="hero">
-    <div class="hero-text">
-      <h2>WE<span style="color:#a7f3d0"> DECREASE</span> MEDICAL COSTS</h2>
-      <p>Customers can save 50-70% on the their medical procedure, while getting to have a vacation abroad.</p>
-      <button class="btn-primary" onclick="document.getElementById('quoteModal').classList.add('show')">
-      Get A FREE Quote Today
-    </button> 
+    <div class="hero-left">
+      <h2>
+        Cut <span class="highlight">Medical Costs</span>,  
+        Keep Your <span class="highlight">Dream Vacation</span>
+      </h2>
+      <p>
+        Save up to <strong>70%</strong> on world-class medical treatments abroad.  
+        Enjoy top doctors, premium recovery stays, and seamless aftercare.
+      </p>
+      <div class="cta-buttons">
+        <button class="btn-primary" onclick="document.getElementById('quoteModal').classList.add('show')">
+          Get a Free Quote
+        </button>
+        <a href="#services" class="btn-secondary">Explore Services</a>
+      </div>
+
     </div>
   </section>
+  
 
   <section id="services" class="services">
     <h3>Our Services</h3>
+    <p class="section-subtitle">From treatment to travel, we take care of everything.</p>
     <div class="grid">
       <div class="card">
-        <h4>🌿 Surgical Procedures</h4>
-        <p>Top doctors & clinics for your health.</p>
+        <div class="icon-circle"><i class="fas fa-user-md"></i></div>
+        <h4>Surgical Procedures</h4>
+        <p>Access top doctors & internationally accredited clinics for your health.</p>
       </div>
       <div class="card">
-        <h4>🌴 Recovery Vacation</h4>
-        <p>Exclusive resorts in breathtaking locations.</p>
+        <div class="icon-circle"><i class="fas fa-umbrella-beach"></i></div>
+        <h4>Recovery Vacation</h4>
+        <p>Relax in exclusive resorts located in breathtaking destinations.</p>
       </div>
       <div class="card">
-        <h4>🤝 Comprehensive Care</h4>
-        <p>From arrival to aftercare – we've got you covered.</p>
+        <div class="icon-circle"><i class="fas fa-hand-holding-heart"></i></div>
+        <h4>Comprehensive Care</h4>
+        <p>From arrival to aftercare – we provide full end-to-end support.</p>
       </div>
     </div>
   </section>
+  
 
   <section id="steps" class="steps">
-    <h3>How it Works</h3>
-    <div class="grid">
-      <div class="card">
-        <div>1</div>
-        <p>Submit Request</p>
+    <h3>How It Works</h3>
+    <p class="section-subtitle">A simple process designed for your peace of mind.</p>
+  
+    <div class="timeline">
+      <div class="step">
+        <div class="step-circle">1</div>
+        <h4>Submit Request</h4>
+        <p>Tell us about your needs and preferences in just a few clicks.</p>
       </div>
-      <div class="card">
-        <div>2</div>
-        <p>Personal Consultation</p>
+      <div class="connector"></div>
+  
+      <div class="step">
+        <div class="step-circle">2</div>
+        <h4>Personal Consultation</h4>
+        <p>Get matched with top clinics and receive transparent pricing.</p>
       </div>
-      <div class="card">
-        <div>3</div>
-        <p>Surgery & Vacation</p>
+      <div class="connector"></div>
+  
+      <div class="step">
+        <div class="step-circle">3</div>
+        <h4>Surgery & Vacation</h4>
+        <p>Receive world-class care while enjoying a luxury recovery stay.</p>
       </div>
-      <div class="card">
-        <div>4</div>
-        <p>Aftercare & Return</p>
+      <div class="connector"></div>
+  
+      <div class="step">
+        <div class="step-circle">4</div>
+        <h4>Aftercare & Return</h4>
+        <p>We stay with you post-procedure to ensure your safe recovery.</p>
       </div>
     </div>
   </section>
+  
 
   <section id="contact" class="contact">
-    <h3>Request Your Free Consultation</h3>
-    <p>We’ll get back to you within 24 hours.</p>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <p id="formMessage"></p>
+    <div class="contact-container">
+      <!-- Left Text Column -->
+      <div class="contact-info">
+        <h3>Request Your Free Consultation</h3>
+        <p>
+          Share your details and one of our coordinators will contact you within 
+          <strong>24 hours</strong>. We ensure confidentiality and personalized guidance 
+          for your medical journey.
+        </p>
+        <ul class="trust-points">
+          <li><i class="fas fa-shield-alt"></i> 100% Secure & Confidential</li>
+          <li><i class="fas fa-user-md"></i> Licensed Partner Clinics</li>
+          <li><i class="fas fa-clock"></i> Fast Response Guarantee</li>
+        </ul>
+      </div>
+  
+      <!-- Right Form Column -->
+      <div class="contact-form-card">
+        <form action="https://formspree.io/f/xwprvgvk" method="POST">
+          <div class="form-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="name" required>
+            <label>Your Name</label>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="_replyto" required>
+            <label>Your Email</label>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-comment-alt"></i>
+            <textarea name="message" required></textarea>
+            <label>Your Message</label>
+          </div>
+          <button type="submit" class="btn-primary">Send Request</button>
+        </form>
+        
+        
+        
+        <p id="formMessage"></p>
+      </div>
+    </div>
   </section>
+  
 
   <footer>
     © <script>document.write(new Date().getFullYear())</script> Medi-Vaca | All rights reserved.
@@ -136,7 +205,7 @@
         <label><strong>Dental procedures needed (check all that apply)</strong></label>
         <div class="checkbox-group">
           <label><input type="checkbox" name="entry.966778561" value="Routine examination and cleaning"> Routine examination and cleaning</label>
-          <label><input type="checkbox" name="entry.966778561" value="Root cleaning and scaling"> Root cleaning and scaling (deep cleaning)</label>
+          <label><input type="checkbox" name="entry.966778561" value="Root cleaning and scaling"> Root cleaning & Scaling</label>
           <label><input type="checkbox" name="entry.966778561" value="Filling"> Filling</label>
           <label><input type="checkbox" name="entry.966778561" value="Extraction"> Extraction</label>
           <label><input type="checkbox" name="entry.966778561" value="Implant"> Implant</label>

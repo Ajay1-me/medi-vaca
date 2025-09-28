@@ -1,25 +1,221 @@
-body { margin: 0; font-family: Arial, sans-serif; background: #f9fbff; color: #333; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; }
-    header h1 { color: #2563eb; margin: 0; }
-    nav a { margin: 0 1rem; text-decoration: none; color: #333; }
-    nav a:hover { color: #2563eb; }
-    button { padding: 0.6rem 1.2rem; border: none; border-radius: 10px; cursor: pointer; }
-    .btn-primary { background: #2563eb; color: #fff; }
-    .btn-primary:hover { background: #1d4ed8; }
-    .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 3rem 2rem; background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover; color: #fff; }
-    .hero-text { max-width: 500px; background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 15px; }
-    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { margin-bottom: 1.5rem; }
-    section { padding: 3rem 2rem; text-align: center; }
-    section h3 { font-size: 2rem; margin-bottom: 2rem; }
-    .grid { display: grid; gap: 1.5rem; }
-    .services { background: #eff6ff url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat bottom/cover; background-blend-mode: lighten; }
-    .services .card, .steps .card { background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
-    .services .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .steps .grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-    .steps .card div { font-size: 2rem; font-weight: bold; color: #2563eb; margin-bottom: 0.5rem; }
-    .contact { background: #2563eb url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center/cover; color: #fff; }
-    form { display: grid; gap: 1rem; max-width: 500px; margin: 0 auto; }
-    input, textarea { padding: 0.8rem; border: none; border-radius: 10px; }
-    #formMessage { margin-top: 1rem; font-weight: bold; }
-    footer { padding: 1rem; text-align: center; font-size: 0.9rem; color: #666; background: #fff; }
+body { 
+	margin: 0; 
+	font-family: Arial, sans-serif; 
+	background: #f9fbff; 
+	color: #333;
+}
+
+header { 
+	display: flex; 
+	justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; }
+header h1 { 
+	color: #2563eb; margin: 0; 
+}
+nav a { 
+	margin: 0 1rem; text-decoration: none; color: #333; 
+}
+nav a:hover { 
+	color: #2563eb; 
+}
+button { 
+	padding: 0.6rem 1.2rem; border: none; border-radius: 10px; cursor: pointer; 
+}
+.btn-primary { 
+	background: #2563eb; color: #fff; 
+}
+.btn-primary:hover { 
+	background: #1d4ed8; 
+}
+.hero { 
+	display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 3rem 2rem; background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover; color: #fff; 
+}
+.hero-text { 
+	max-width: 500px; background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 15px; 
+}
+.hero h2 { 
+	font-size: 2.5rem; margin-bottom: 1rem; 
+}
+.hero p { 
+	margin-bottom: 1.5rem; 
+}
+section { 
+	padding: 3rem 2rem; text-align: center; 
+}
+section h3 { 
+	font-size: 2rem; margin-bottom: 2rem; 
+}
+.grid { 
+	display: grid; gap: 1.5rem; 
+}
+.services { 
+	background: #eff6ff url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat bottom/cover; background-blend-mode: lighten; 
+}
+.services .card, .steps .card { 
+	background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); 
+}
+.services .grid { 
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+}
+.steps .grid { 
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.steps .card div { 
+	font-size: 2rem; font-weight: bold; color: #2563eb; margin-bottom: 0.5rem; 
+}
+.contact { 
+	background: #2563eb url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center/cover; color: #fff; 
+}
+form { 
+	display: grid; gap: 1rem; max-width: 500px; margin: 0 auto; 
+}
+input, textarea { 
+	padding: 0.8rem; border: none; border-radius: 10px; 
+}
+#formMessage { 
+	margin-top: 1rem; font-weight: bold; 
+}
+footer { 
+	padding: 1rem; text-align: center; font-size: 0.9rem; color: #666; background: #fff; 
+}
+/* Modal backdrop */
+#quoteModal {
+	display: none;
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,0.6);
+	z-index: 1000;
+	align-items: center;
+	justify-content: center;
+}
+#quoteModal.show {
+	display: flex;
+	animation: fadeIn 0.3s ease;
+}
+
+/* Modal box */
+#quoteModal .modal-content {
+	background: #fff;
+	padding: 1.8rem 2rem;
+	border-radius: 12px;
+	max-width: 600px;
+	width: 90%;
+	box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+	overflow-y: auto;
+	max-height: 90vh;
+}
+
+/* Header */
+#quoteModal h3 {
+	margin: 0 0 1rem 0;
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: #2563eb;
+	text-align: center;
+	border-bottom: 1px solid #e5e7eb;
+	padding-bottom: 0.8rem;
+}
+
+/* Form layout */
+#quoteForm {
+	display: flex;
+	flex-direction: column;
+}
+#quoteForm label {
+	font-weight: 600;
+	margin: 0.6rem 0 0.3rem;
+	color: #111827;
+}
+#quoteForm input[type="text"],
+#quoteForm input[type="number"],
+#quoteForm textarea,
+#quoteForm select {
+  width: 100%;
+  padding: 0.7rem 0.8rem;   /* match input padding */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;     /* keep font consistent */
+  box-sizing: border-box;   /* prevent weird resizing */
+  appearance: none;         /* normalize dropdown styling */
+}
+#quoteForm textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+#quoteForm input[type="checkbox"] {
+	margin-right: 0.5rem;
+}
+
+/* Compact checkbox layout */
+#quoteForm .checkbox-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.3rem 1rem;
+	margin-bottom: 1rem;
+	font-size: 0.95rem;
+}
+
+/* Actions */
+#quoteForm .form-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.8rem;
+	margin-top: 1rem;
+}
+#quoteForm .btn-primary {
+	background-color: #2563eb;
+	color: #fff;
+	border: none;
+	padding: 0.7rem 1.3rem;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+#quoteForm .btn-primary:hover {
+	background-color: #1d4ed8;
+}
+#quoteForm .close-btn {
+	background: #e5e7eb;
+	color: #111;
+	border: none;
+	padding: 0.7rem 1.3rem;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+#quoteForm .close-btn:hover {
+	background-color: #d1d5db;
+}
+
+/* Animation */
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(-10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.checkbox-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* 2 columns */
+	gap: 0.5rem 1.2rem;
+	margin-bottom: 1rem;
+	font-size: 0.95rem;
+}
+.checkbox-group label {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	cursor: pointer;
+}
+.checkbox-group input[type="checkbox"] {
+	accent-color: #2563eb; /* modern blue checkmark */
+}
+.checkbox-group input[type="text"] {
+	flex: 1;
+	padding: 0.4rem 0.6rem;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 0.9rem;
+}
+
+  

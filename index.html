@@ -3,37 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/babel" src="app.jsx"></script>
   <title>Medi-Vaca – Medicine meets Vacation</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f9fbff; color: #333; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; }
-    header h1 { color: #2563eb; margin: 0; }
-    nav a { margin: 0 1rem; text-decoration: none; color: #333; }
-    nav a:hover { color: #2563eb; }
-    button { padding: 0.6rem 1.2rem; border: none; border-radius: 10px; cursor: pointer; }
-    .btn-primary { background: #2563eb; color: #fff; }
-    .btn-primary:hover { background: #1d4ed8; }
-    .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 3rem 2rem; background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover; color: #fff; }
-    .hero-text { max-width: 500px; background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 15px; }
-    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { margin-bottom: 1.5rem; }
-    section { padding: 3rem 2rem; text-align: center; }
-    section h3 { font-size: 2rem; margin-bottom: 2rem; }
-    .grid { display: grid; gap: 1.5rem; }
-    .services { background: #eff6ff url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat bottom/cover; background-blend-mode: lighten; }
-    .services .card, .steps .card { background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
-    .services .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .steps .grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-    .steps .card div { font-size: 2rem; font-weight: bold; color: #2563eb; margin-bottom: 0.5rem; }
-    .contact { background: #2563eb url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center/cover; color: #fff; }
-    form { display: grid; gap: 1rem; max-width: 500px; margin: 0 auto; }
-    input, textarea { padding: 0.8rem; border: none; border-radius: 10px; }
-    #formMessage { margin-top: 1rem; font-weight: bold; }
-    footer { padding: 1rem; text-align: center; font-size: 0.9rem; color: #666; background: #fff; }
-  </style>
 </head>
 <body>
-
   <header>
     <h1>Medi-Vaca</h1>
     <nav>
@@ -41,12 +15,14 @@
       <a href="#steps">How it Works</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="btn-primary">Get a Quote</button>
+    <button class="btn-primary" onclick="document.getElementById('quoteModal').classList.add('show')">
+      Get a Quote
+    </button>  
   </header>
 
   <section class="hero">
     <div class="hero-text">
-      <h2>Medical Excellence <span style="color:#a7f3d0">meets</span> Relaxation 🌴</h2>
+      <h2>Medical Excellence <span style="color:#a7f3d0">meets</span> Relaxation</h2>
       <p>We combine world-class medical procedures with relaxing vacation experiences – for your health and well-being.</p>
       <button class="btn-primary">Book Free Consultation</button>
     </div>
@@ -93,7 +69,7 @@
   </section>
 
   <section id="contact" class="contact">
-    <h3>Request Your Free Consultation 🌴</h3>
+    <h3>Request Your Free Consultation</h3>
     <p>We’ll get back to you within 24 hours.</p>
     <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -109,6 +85,82 @@
   </footer>
 
   
+  <div id="quoteModal">
+    <div class="modal-content">
+      <h3>Get a Quote</h3>
+      <form id="quoteForm"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZBPsuAu8Vg3xEIL6714jfIDf_MVLl2qASUlD7XKYJ9jpIMQ/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true">
+        <label>What is your name?</label>
+        <input type="text" name="entry.1558228076">
+
+        <label>What is your email?</label>
+        <input type="text" name="entry.1528213091">
+
+        <label><strong>Dental procedures needed (check all that apply)</strong></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="entry.966778561" value="Routine examination and cleaning"> Routine examination and cleaning</label>
+          <label><input type="checkbox" name="entry.966778561" value="Root cleaning and scaling"> Root cleaning and scaling (deep cleaning)</label>
+          <label><input type="checkbox" name="entry.966778561" value="Filling"> Filling</label>
+          <label><input type="checkbox" name="entry.966778561" value="Extraction"> Extraction</label>
+          <label><input type="checkbox" name="entry.966778561" value="Implant"> Implant</label>
+          <label><input type="checkbox" name="entry.966778561" value="Crown"> Crown</label>
+          <label><input type="checkbox" name="entry.966778561" value="Bridge"> Bridge</label>
+          <label><input type="checkbox" name="entry.966778561" value="Brace"> Brace</label>
+          <label>Other: <input type="text" name="entry.966778561" placeholder="Please specify"></label>
+        </div>
+  
+        <label>City and state from which you will depart:</label>
+        <input type="text" name="entry.1086739811">
+  
+        <label>If you want to add a vacation in the same area as treatment, how many days?</label>
+        <input type="number" name="entry.2001180331" min="1" max="30">
+  
+        <label>Class of hotel (1 to 5):</label>
+        <input type="number" name="entry.1924771286" min="1" max="5">
+  
+        <label>Preferred treatment city:</label>
+        <select name="entry.487626515" required>
+          <option>İstanbul, Turkey</option>
+          <option>Antalya, Turkey</option>
+          <option>Bodrum, Turkey</option>
+          <option>Los Algodones, Mexico</option>
+          <option>Cancun, Mexico</option>
+          <option>Tijuana, Mexico</option>
+          <option>San José, Costa Rica</option>
+          <option>Budapest, Hungary</option>
+          <option>Bangkok, Thailand</option>
+          <option>Phuket, Thailand</option>
+          <option>Whichever is least expensive</option>
+        </select>
+  
+        <label>Any other needs or preferences?</label>
+        <textarea name="entry.677570694"></textarea><br>
+  
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Submit</button>
+          <button type="button" class="close-btn" onclick="document.getElementById('quoteModal').classList.remove('show')">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Invisible iframe to swallow the redirect -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { formSuccess(); }"></iframe>
+
 
 </body>
+
+<script>
+  let submitted = false;
+
+  function formSuccess() {
+    alert("Form submitted successfully!");
+    document.getElementById("quoteForm").reset();
+    document.getElementById("quoteModal").classList.remove("show");
+    submitted = false;
+  }
+</script>
+
 </html>
